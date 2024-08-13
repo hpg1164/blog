@@ -2,15 +2,12 @@
 slug: getting-started-with-beautifulsoup4
 title: Getting Started with BeautifulSoup4 for Web Scraping
 authors:
-  name: Sudip Parajuli
-  title: Full Stack Web Dev
-  url: https://github.com/sudipnext
-  image_url: https://parajulisudip.com.np/_next/static/media/head.d5ea2d46.jpg
+  sudipnext
 tags: [web scraping, python, beautifulsoup, tutorial]
 ---
 
 Web scraping is a technique that allows us to extract data from websites. BeautifulSoup or bs4 is one of the most popular Python libraries that provides us with a way to scrape data from a website. In this blog, we will learn how to get started with BeautifulSoup4 and what are the next steps to follow.
-
+<!-- truncate -->
 # Be sure that you have Python and pip installed
 ## Installing BeautifulSoup4
 
