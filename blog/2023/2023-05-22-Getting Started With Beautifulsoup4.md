@@ -1,9 +1,9 @@
 ---
 slug: getting-started-with-beautifulsoup4
-title: Getting Started with BeautifulSoup4 for Web Scraping
+title: Data Scraping, A complete Beginner Friendly Guide to Become Expert
 authors:
   sudipnext
-tags: [web scraping, python, beautifulsoup, tutorial]
+tags: [web-scraping, python, beautifulsoup, tutorial]
 ---
 
 Web scraping is a technique that allows us to extract data from websites. BeautifulSoup or bs4 is one of the most popular Python libraries that provides us with a way to scrape data from a website. In this blog, we will learn how to get started with BeautifulSoup4 and what are the next steps to follow.
@@ -151,6 +151,8 @@ soup = BeautifulSoup(web_response.content, "html.parser")
 
 Let’s see what data we need. If we go to the website and inspect it, we would see something like this:
 
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*b7POai7zy71z6_xVbsswnQ.png)
+
 By carefully observing the HTML structure, we can often identify patterns in the data we want to scrape. Armed with our acquired scraping skills, we can extract specific information, such as ratings, from a website. In this case, we’ll focus on extracting ratings from HTML elements enclosed within `<td>` tags.
 
 ```python
@@ -171,6 +173,7 @@ for rating in ratings:
 plt.hist(rating_list)
 plt.show()
 ```
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-2_4TVwcLErOcZKGDaQ4uA.png)
 
 We can clearly see most of the ratings lie between 3 and 4.
 
@@ -193,6 +196,7 @@ columns = ["Company", "Ratings"]
 
 df = pd.DataFrame(list(zip(company_names, rating_list)), columns=columns)
 ```
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PJI79KqRMLwEi0h-9w-LUQ.png)
 
 Since we have a single company with different bar names, let’s find out the average and group the companies together and calculate their mean ratings. We can additionally print and view the grouped data:
 
@@ -200,10 +204,11 @@ Since we have a single company with different bar names, let’s find out the av
 group_df = df.groupby(['Company'], as_index=False).mean().groupby('Company')['Ratings'].mean()
 print(group_df.nlargest(10))
 ```
+![Output of the company with the highest ratings](https://miro.medium.com/v2/resize:fit:1056/format:webp/1*TSxFQeISYonm7oTK8GwVbw.png)
 
-Output of the company with the highest ratings:
 
 Now, we need to find out which country the company is located in because we know the name of the company with the highest average ratings (i.e., France).
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*mu2DYdlf48vuo9yv9YA5MQ.png)
 
 Now, finally, let’s select the class of CocoaPercent. In this case, we have a `%`, which we have to eliminate and convert the string into float, so we do the following:
 
@@ -227,7 +232,7 @@ Let’s plot the CocoaPercentage and the ratings given with a scatter plot to se
 plt.scatter(df.CocoaPercentage, df.Ratings)
 plt.show()
 ```
-
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5GCbBctrQpeEDD-XM7z5gw.png)
 ### Conclusion
 
 Beautiful Soup 4 is an amazing tool for web scraping in Python. It is easy to use, making it one of the most popular choices among developers. Now that you have some insights about BeautifulSoup and the power of Beautiful Soup 4, you can extract valuable data from websites and leverage it for various applications, such as data analysis, research, etc.

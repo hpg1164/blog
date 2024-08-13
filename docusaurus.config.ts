@@ -48,6 +48,8 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -76,7 +78,7 @@ const config: Config = {
         //   position: 'left',
         //   label: 'Tutorial',
         // },
-        // { to: "/blog", label: "Blog", position: "left" },
+        // { to: "/", label: "Blog", position: "left" },
         {
           href: "https://github.com/sudipnext",
           label: "GitHub",

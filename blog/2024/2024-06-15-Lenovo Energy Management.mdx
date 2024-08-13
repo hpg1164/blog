@@ -1,0 +1,54 @@
+---
+slug: creating-lenovo-energy-management-tool-on-linux
+title: How I Created a Unofficial Lenovo Energy Management Tool For Linux
+authors:
+  sudipnext
+tags: [linux, lenovo, energy-management, qt, python]
+---
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*nKDvwhBZkSCoOLrN.jpg)
+# Creating Lenovo Energy Management Tool on Linux
+
+If you have a Lenovo Ideapad gaming device, then you know the issues of switching to Linux. Sometimes the driver fails to work within the Linux environment, and the integrated and dedicated graphics card combination can be a nightmare when managing through Linux. You don’t have the tools to switch smoothly between them. Yeah, you may argue that we can change that through BIOS, and it’s alright. But the major issue is I miss the features of the Lenovo Energy Management tool so much that I decided to create one for myself, especially Conservation Mode (which stops the charging at 60% and helps improve battery health).
+<!-- truncate -->
+## Step 1: Finding the Commands to Activate Conservation Mode
+
+```bash
+lsmod | grep ideapad_laptop
+```
+- Results as:
+  - `ideapad_laptop         57344  0`
+  - `sparse_keymap          12288  1 ideapad_laptop`
+  - `platform_profile       12288  1 ideapad_laptop`
+  - `video                  73728  3 amdgpu,ideapad_laptop,nvidia_modeset`
+  - `wmi                    40960  3 video,wmi_bmof,ideapad_laptop`
+
+```bash
+ls /sys/bus/platform/drivers/ideapad_acpi/
+```
+- Gives the right path for your device model and output like this:
+  - `bind  module  uevent  unbind  VPC2004:00`
+
+```bash
+cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode
+```
+- Output: `0`
+
+```bash
+echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+```
+- To enable Conservation Mode
+
+```bash
+echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+```
+- To disable Conservation Mode
+
+## Step 2: Creating and Designing the UI with QTDesigner
+
+After finding this command, I took the help of the QT Designer app and created a nice-looking UI for it.
+
+After that, I copied the Python code from QT Designer to VSCode and then triggered those shell scripts when I clicked on the checkbox to make a functional Conservation Mode application. The GitHub link to the project is [here](https://github.com/sudipnext/lenovo_energy_management.git).
+
+## Conclusion
+
+I am looking for collaboration so that we can make a functional UI for a complete unofficial Lenovo energy management tool. Currently, I have tested this on my laptop Lenovo Ideapad Gaming 3 Ryzen 5 5600H only.
