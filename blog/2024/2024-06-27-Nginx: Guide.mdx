@@ -32,9 +32,9 @@ In this type of proxy, multiple users communicate with the same server, and the 
 #### 1.2 Reverse Proxy
 
 **Reverse proxy** is particularly what Nginx does. If you have multiple servers running on different or the same machines and you need to access them from the same server, Nginx helps you with this efficiently. 
-
+:::tip
 For example, if your backend is running on `localhost:8000` and your frontend application on `localhost:3000`, you might want to access both at once from `localhost:80`. Nginx can be configured to redirect users to the appropriate server based on the requested endpoint.
-
+:::
 ![Reverse Proxy](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*zkKbCe7-cWYZxwUI1lf2cA.png)
 
 ### 2. Load Balancing
@@ -104,8 +104,9 @@ You can find the Nginx config files inside the container with:
 ```bash
 ls /etc/nginx/
 ```
-
+:::warning
 Be sure to do this inside that container terminal. We need to change the `nginx.conf` file to manage our Nginx server.
+:::
 
 ## Basic Structure of Nginx Configuration
 

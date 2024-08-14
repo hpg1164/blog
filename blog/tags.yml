@@ -147,3 +147,75 @@ training-testing-set:
   label: Training and Testing Set
   permalink: /training-testing-set
   description: Concepts and practices for splitting data into training and testing sets for model validation.
+
+
+programming:
+  label: Programming
+  permalink: /programming
+  description: Concepts, techniques, and best practices in software development.
+
+best-practices:
+  label: Best Practices
+  permalink: /best-practices
+  description: Guidelines and practices for writing clean, efficient, and maintainable code.
+
+docstrings:
+  label: Docstrings
+  permalink: /docstrings
+  description: Documentation strings in Python to describe the purpose and usage of functions, classes, and modules.
+
+DRY:
+  label: DRY (Don’t Repeat Yourself)
+  permalink: /DRY
+  description: A software development principle that emphasizes reducing redundancy in code.
+
+DOT:
+  label: DOT (Do One Thing)
+  permalink: /DOT
+  description: A principle in software design advocating for keeping functions focused on a single responsibility.
+
+coding-standards:
+  label: Coding Standards
+  permalink: /coding-standards
+  description: Rules and guidelines for writing consistent and high-quality code.
+
+code-quality:
+  label: Code Quality
+  permalink: /code-quality
+  description: Techniques and practices to ensure that code is clean, efficient, and maintainable.
+
+javascript:
+  label: JavaScript
+  permalink: /javascript
+  description: JavaScript programming language concepts, including ES6+ features, frameworks, and best practices.
+
+
+promises:
+  label: Promises
+  permalink: /promises
+  description: A guide to understanding and using Promises for handling asynchronous operations in JavaScript.
+
+asynchronous:
+  label: Asynchronous
+  permalink: /asynchronous
+  description: Understanding asynchronous programming, including Promises, async/await, and event-driven architecture.
+
+synchronous:
+  label: Synchronous
+  permalink: /synchronous
+  description: Synchronous programming concepts and how they differ from asynchronous approaches.
+
+fetch-api:
+  label: Fetch API
+  permalink: /fetch-api
+  description: Using the Fetch API for making network requests in JavaScript and handling responses asynchronously.
+
+callbacks:
+  label: Callbacks
+  permalink: /callbacks
+  description: Using callback functions for asynchronous operations in JavaScript, including common patterns and pitfalls.
+
+promise-chaining:
+  label: Promise Chaining
+  permalink: /promise-chaining
+  description: Techniques for chaining multiple asynchronous operations using Promises in JavaScript.

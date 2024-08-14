@@ -1,0 +1,168 @@
+---
+slug: python-functions-best-practices
+title: Mastering Python Tips to Better in Programming
+authors:
+  - sudipnext
+tags:
+  [python, programming, best-practices, docstrings, DRY, DOT, coding-standards, code-quality]
+---
+
+![](https://miro.medium.com/v2/resize:fit:1100/format:webp/0*KUUO2ekgyxeve2i0.jpeg)
+# Writing Functions in Python
+
+Writing functions in Python is straightforward; it’s primarily about syntax and ensuring proper indentation. However, there's a crucial aspect that elevates code quality.
+<!--truncate-->
+## Docstrings
+
+### What are Docstrings?
+
+Docstrings are a technique used to communicate a function’s purpose to other programmers. As the famous quote goes, “Great programmers write code that humans can understand.”
+
+### Typical Docstring Format:
+
+```python
+def name_of_the_function(arguments):
+    """
+    Description of what the function does.
+    Description of the arguments, if any.
+    Description of the return value(s), if any.
+    Description of errors raised, if any.
+    Optional extra notes or examples of usage.
+    """
+```
+
+Learning to write and utilize docstrings is a skill you’ll thank yourself for. Not only does it enhance code readability, but it also provides clear guidance on a function’s purpose, its arguments, return values, and expected behavior. This clarity simplifies work processes significantly.
+
+### Key Benefits of Docstrings:
+
+- **Readability**: Docstrings make code easier to read and understand, reducing ambiguity and improving overall code comprehension.
+- **Documentation**: They serve as self-contained documentation within the code, offering insights into a function’s usage without needing to dive into its implementation details.
+- **Expectation**: Docstrings define what users (including other programmers) should expect when using a function, including its inputs, outputs, and any side effects.
+
+### Accessing Docstrings:
+
+There are several ways to access docstrings within a function:
+
+1. Using `inspect`:
+
+    ```python
+    import inspect
+    inspect.getdoc(function_name)
+    ```
+
+2. Using the `__doc__` attribute:
+
+    ```python
+    function_name.__doc__
+    ```
+
+## DRY (Don’t Repeat Yourself)
+
+DRY is a fundamental principle in software development. It emphasizes the importance of avoiding redundancy by consolidating common code into reusable functions or modules.
+
+### Example:
+
+```python
+physics_marks = [80, 75, 90, 85]
+chemistry_marks = [70, 65, 80, 75]
+
+physics_mean = sum(physics_marks) / len(physics_marks)
+chemistry_mean = sum(chemistry_marks) / len(chemistry_marks)
+```
+
+Instead of repeating the same calculation throughout your codebase, you can create a single function to handle it:
+
+```python
+def mean_calculator(values):
+    """
+    Get the mean of a list of values.
+
+    Args:
+        values (iterable of float): A list of numbers.
+
+    Returns:
+        float: The mean of the values.
+    """
+    mean = sum(values) / len(values)
+    return mean
+
+# Example usage
+physics_mean = mean_calculator(physics_marks)
+```
+:::tip
+Applying DRY not only reduces redundancy but also improves code maintainability, readability, and scalability. It allows you to write cleaner, more efficient code that is easier to understand and maintain over time.
+:::
+## Do One Thing (DOT)
+
+“Do One Thing” (DOT) is another fundamental concept in software development. It advocates for keeping functions focused on a single task or responsibility rather than trying to accomplish multiple tasks within a single function.
+
+### Example:
+
+Suppose you have a function that reads data from a file, processes it, and then writes the processed data back to another file:
+
+```python
+def process_data_and_write_to_file(input_file, output_file):
+    """Read data from input file, process it, and write processed data to output file."""
+    with open(input_file, 'r') as f:
+        data = f.read()
+        processed_data = process_data(data)
+
+    with open(output_file, 'w') as f:
+        f.write(processed_data)
+```
+
+In this example, the function is doing multiple things: reading data from a file, processing it, and writing the processed data to another file.
+
+A better approach would be to split this function into smaller, more focused functions, each responsible for a single task:
+
+```python
+def read_data_from_file(file_path):
+    """
+    Read data from a file.
+
+    Args:
+        file_path (str): The path to the file from which data will be read.
+
+    Returns:
+        str: The data read from the file.
+    """
+    with open(file_path, 'r') as f:
+        return f.read()
+
+def process_data(data):
+    """
+    Process the data.
+
+    Args:
+        data (str): The data to be processed.
+
+    Returns:
+        str: The processed data.
+    """
+    processed_data = data.upper()  # Example: converting data to uppercase
+    return processed_data
+
+def write_data_to_file(data, file_path):
+    """
+    Write data to a file.
+
+    Args:
+        data (str): The data to be written to the file.
+        file_path (str): The path to the file where data will be written.
+    """
+    with open(file_path, 'w') as f:
+        f.write(data)
+```
+
+### Usage:
+
+```python
+input_file_path = 'input.txt'
+output_file_path = 'output.txt'
+
+input_data = read_data_from_file(input_file_path)
+processed_data = process_data(input_data)
+write_data_to_file(processed_data, output_file_path)
+```
+
+In this way, each function has a description docstring that explains its purpose, parameters, and return values. By following this convention, we enhance the readability and understandability of the code, making it easier for other developers (and our future selves) to use its functionality.
