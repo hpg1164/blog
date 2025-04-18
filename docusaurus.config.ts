@@ -3,20 +3,20 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "🥳        Blog        💻 | @sudipnext",
+  title: "🥳        Blog        💻 | @hpg1164",
   tagline:
     "You can find me writing about tech, programming, and littlebit weird things in mathematics.",
   favicon: "img/star.jpg",
 
   // Set the production url of your site here
-  url: "https://parajulisudip.com.np",
+  url: "https://hariprasadgajuel.com.np",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "sudipnext", // Usually your GitHub org/user name.
+  organizationName: "hpg1164", // Usually your GitHub org/user name.
   projectName: "blog", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -66,7 +66,7 @@ const config: Config = {
     // Replace with your project's social card
     // image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: "<sudipnext />",
+      title: "<hpg1164 />",
       logo: {
         alt: "",
         src: "👨🏻‍💻",
@@ -80,12 +80,12 @@ const config: Config = {
         // },
         // { to: "/", label: "Blog", position: "left" },
         {
-          href: "https://github.com/sudipnext",
+          href: "https://github.com/hpg1164",
           label: "GitHub",
           position: "right",
         },
         {
-          href: "https://medium.com/@sudipnext",
+          href: "https://medium.com/@hpg1164",
           label: "Medium",
           position: "right",
         },
@@ -129,22 +129,30 @@ const config: Config = {
             // },
             {
               label: "GitHub",
-              href: "https://github.com/sudipnext",
+              href: "https://github.com/hpg1164",
             },
             {
               label: "Medium",
-              href: "https://medium.com/@sudipnext",
+              href: "https://medium.com/@hpg1164",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} sudipnext, Built with Love❤️.`,
+      copyright: `Copyright © ${new Date().getFullYear()} hpg1164, Built with Love❤️.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  
+  // stylesheets = {
+  //   href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+  //   type: 'text/css',
+  //   integrity:
+  //     'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+  //   crossorigin: 'anonymous',
+  // },
 };
 
 export default config;

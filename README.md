@@ -1,20 +1,21 @@
-# Sudip Parajuli's Blog Repository
+# Hari prasad gajurel'S Blog Repository
 
 This repository contains blog posts covering various fields such as:
 
 - Algorithms and Optimization
-- Web Servers and Networking
+- Robotics and control
 - Python Programming and Best Practices
 - Linux Tools and Customization
-- Data Science and Machine Learning
-- JavaScript and Asynchronous Programming
+-  Machine Learning 
+- Embedded systems
 
 The posts aim to provide insights, tutorials, and practical guides for developers and enthusiasts in these fields.
 
 
 ## Author
 
-Sudip Parajuli – Full Stack Django Developer, Data Science Enthusiast, IoT and Robotics Specialist.
+Hari Prasad Gajurel – Researcher, 
+ Enthusiast, Control and Robotics Specialist.
 
 
 ```

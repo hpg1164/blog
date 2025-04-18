@@ -23,10 +23,6 @@ lenovo:
   permalink: /lenovo
   description: Everything related to Lenovo products, including software solutions and hardware optimizations.
 
-web-scraping:
-  label: Web Scraping
-  permalink: /web-scraping
-  description: Tutorials and resources on extracting data from websites using various tools and techniques.
 
 qt:
   label: Qt
